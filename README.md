@@ -18,8 +18,8 @@ This is a first release dedicated to developers at this early stage. It will be 
 
 ## Contributors
 
-- [Saman Bemel Benrud](http:/github.com/samanpwbb) - Design
-- [Michael Aufreiter](http:/github.com/michael) - Code
+- [Saman Bemel Benrud](http://github.com/samanpwbb) - Design
+- [Michael Aufreiter](http://github.com/michael) - Code
 
 Now that you're here, why not start contributing as well? :)
 
@@ -30,10 +30,14 @@ Now that you're here, why not start contributing as well? :)
 
 - Users without write capability automatically create incremental patches (e.g., `prose-patch-1`, `prose-patch-2`, etc.)
 - Forked branches not deleted after pull request is generated (which would automatically close the pull request prior to merge)
-- Conten body can contain three consequtive hyphens, e.g., as a heading without breaking the metadata parsing
+- Content body can contain three consequtive hyphens, e.g., as a heading without breaking the metadata parsing
 - Any file may have YAML frontmatter, not just markdown files within the `_posts` folder of the repository
 - Language has been modified to be less coder centric and more content centic (e.g., "submit change" rather than "send patch"
 - Interface for saving now automatically moved focus to the change log input and uses placeholder text for easy overwriting of the default message
+- Moved source to CoffeeScript and minified, resulting in a 30% decrease in overhead
+- Better templating (JST)
+- Grunt-bassed build tools
+- Ability to redirect root URL
 
 **0.4.0** -  *July 30 2012*
 

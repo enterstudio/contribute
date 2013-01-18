@@ -1,4 +1,6 @@
 class app.views.Application extends Backbone.View
+  
+  el: "#container"
 
   events:
     "click .toggle-view": "toggleView"
@@ -20,10 +22,10 @@ class app.views.Application extends Backbone.View
     @header = new app.views.Header(model: @model)
     lazyLayout = _.debounce(calculateLayout, 300)
     $(window).resize lazyLayout
-
+    
   render: ->
     $(@header.render().el).prependTo @el
-    this
+    @
 
   replaceMainView: (name, view) ->
     $("body").removeClass().addClass "current-view " + name
@@ -121,3 +123,11 @@ class app.views.Application extends Backbone.View
 
   loaded: ->
     $("#main .loading").remove()
+  
+  #should return null if no need to confirm, otherwise the message to confirm with
+  confirmExit: (e) =>
+    return null unless @mainView?
+    return null unless @mainView.dirty
+
+    msg = "You have unsaved changes. Are you sure you want to leave?"
+    return if e? then msg else return !confirm msg
