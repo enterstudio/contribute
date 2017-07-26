@@ -12,3 +12,5 @@ exclude:
 - package.json
 - Gruntfile.coffee
 rootUrl: project-open-data/project-open-data.github.io
+
+theme: jekyll-theme-architect
